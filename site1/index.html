@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Site1</title>
+  <meta charset="UTF-8" />
+  <title>Site 1</title>
+
+  <!-- Google Font for extra flair (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
   <style>
+    /* ✨ Moving gradient background */
+    @keyframes gradientShift {
+      0%,100% { background-position: 0% 50%; }
+      50%     { background-position: 100% 50%; }
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      font-size: 48px;
-      font-weight: bold;
-      padding: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 4rem;
+      color: #ffffff;
+      text-shadow: 0 0 15px rgba(0,0,0,0.3);
+      background: linear-gradient(-45deg,#36d1dc,#5b86e5,#36d1dc);
+      background-size: 400% 400%;
+      animation: gradientShift 10s ease infinite;
+    }
+
+    /* subtle pulsing text */
+    @keyframes pulse {
+      0%,100% { transform: scale(1);   }
+      50%     { transform: scale(1.05);}
+    }
+
+    h1 {
+      margin: 0;
+      animation: pulse 3s ease-in-out infinite;
     }
   </style>
 </head>
 <body>
-  Hello Site 1
+  <h1>Hello Site 1</h1>
 </body>
 </html>
