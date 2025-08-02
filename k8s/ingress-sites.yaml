@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sites-ingress
+  namespace: ingress-nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /site1(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: site1-service
+            port:
+              number: 80
+      - path: /site2(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: site2-service
+            port:
+              number: 80

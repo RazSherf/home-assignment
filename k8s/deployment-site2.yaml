@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: site2-deployment
+  namespace: site2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: site2
+  template:
+    metadata:
+      labels:
+        app: site2
+    spec:
+      containers:
+      - name: site2
+        image: site2:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
